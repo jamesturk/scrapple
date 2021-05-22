@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block base %}
+  <div class="card fluid">
+    <h1 class="section">Yoyodyne Propulsion Systems <small>The future begins tomorrow</small></h1>
+    <div class="section">
+      <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Position Name</th>
+          <th>Status</th>
+          <th>Hired</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for e in employees %}
+      <tr>
+        <td>{{ e.first }}</td>
+        <td>{{ e.last }}</td>
+        <td>{{ e.position }}</td>
+        <td>{{ e.status }}, {{ e.children }} children</td>
+        <td>{{ e.hired }}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}
