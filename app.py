@@ -1,5 +1,5 @@
 import csv
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 
 app = Flask(__name__)
 
@@ -35,4 +35,4 @@ def staff_detail(id_):
     if employee := employees().get(id_):
         return render_template("staff_detail.html", employee=employee)
     else:
-        raise 404
+        abort(404)
