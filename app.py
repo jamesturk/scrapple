@@ -3,10 +3,16 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+_employees = {}
+
 
 def employees():
-    with open("data/employees.csv") as f:
-        employees = list(csv.DictReader(f))
+    # thanks to http://www.figmentfly.com/bb/badguys3.html for names
+    global _employees
+    if not _employees:
+        with open("data/employees.csv") as f:
+            _employees = {e["id"]: e for e in csv.DictReader(f)}
+    return _employees
 
 
 @app.route("/")
@@ -21,8 +27,12 @@ def about():
 
 @app.route("/staff")
 def staff():
-    # thanks to http://www.figmentfly.com/bb/badguys3.html for names
-    with open("data/employees.csv") as f:
-        employees = list(csv.DictReader(f))
+    return render_template("staff.html", employees=employees().values())
 
-    return render_template("staff.html", employees=employees)
+
+@app.route("/staff/<id_>")
+def staff_detail(id_):
+    if employee := employees().get(id_):
+        return render_template("staff_detail.html", employee=employee)
+    else:
+        raise 404

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block base %}
+  <div class="card fluid">
+    <h2 class="section">Employee Details for {{ employee.first }} {{ employee.last }}</h2>
+    <div class="section">
+      <dl>
+        <dt>Position</dt>
+        <dd>{{ employee.position }}</dd>
+        <dt>Marital Status</dt>
+        <dd>{{ employee.status }}</dd>
+        <dt>Number of Children</dt>
+        <dd>{{ employee.children }}</dd>
+        <dt>Hired</dt>
+        <dd>{{ employee.hired }}</dd>
+      </dl>
+    </div>
+  </div>
+{% endblock %}

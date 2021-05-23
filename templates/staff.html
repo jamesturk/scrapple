@@ -10,8 +10,7 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>Position Name</th>
-          <th>Status</th>
-          <th>Hired</th>
+          <th>&nbsp;</th>
         </tr>
       </thead>
       <tbody>
@@ -20,8 +19,7 @@
         <td>{{ e.first }}</td>
         <td>{{ e.last }}</td>
         <td>{{ e.position }}</td>
-        <td>{{ e.status }}, {{ e.children }} children</td>
-        <td>{{ e.hired }}</td>
+        <td><a href="/staff/{{ e.id }}">Details</a></td>
       </tr>
       {% endfor %}
       </tbody>
