@@ -4,6 +4,11 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
+def employees():
+    with open("data/employees.csv") as f:
+        employees = list(csv.DictReader(f))
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
