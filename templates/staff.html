@@ -4,7 +4,7 @@
   <div class="card fluid">
     <h1 class="section">Yoyodyne Propulsion Systems <small>Staff Roster</small></h1>
     <div class="section">
-      <table id="employees">
+      <table id="employees" style="max-height: 100%;">
       <thead>
         <tr>
           <th>First Name</th>
@@ -24,6 +24,17 @@
       {% endfor %}
       </tbody>
       </table>
+      <div style="display: grid; grid-template-columns: auto auto;">
+      {% if prev_page %}
+        <a class="button" href="?page={{ prev_page }}" style="justify-self: start;">&laquo; Previous</a>
+      {% else %}
+        <!-- for grid spacing -->
+        <span>&nbsp;</span>
+      {% endif %}
+      {% if next_page %}
+        <a class="button" style="justify-self: end;" href="?page={{ next_page }}">Next &raquo;</a>
+      {% endif %}
+      </div>
     </div>
   </div>
 {% endblock %}
