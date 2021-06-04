@@ -27,7 +27,6 @@ class EmployeeList(HtmlListPage):
 
 class EmployeeDetail(HtmlPage):
     def process_page(self):
-        position = CSS("#position").match_one(self.root)
         marital_status = CSS("#status").match_one(self.root)
         children = CSS("#children").match_one(self.root)
         hired = CSS("#hired").match_one(self.root)
