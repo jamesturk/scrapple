@@ -47,6 +47,11 @@ def staff():
 
 @app.route("/staff/<id_>")
 def staff_detail(id_):
+    if id_ == "404":
+        abort(
+            404,
+            "This page intentionally left blank. (No really! This is an intentional error for demonstration purposes.)",
+        )
     if employee := employees().get(id_):
         return render_template("staff_detail.html", employee=employee)
     else:
