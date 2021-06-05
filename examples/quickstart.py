@@ -1,5 +1,5 @@
 # imports we'll use in this example
-from spatula import HtmlPage, HtmlListPage, CSS, XPath
+from spatula import HtmlPage, HtmlListPage, CSS, XPath, SelectorError
 
 
 class EmployeeList(HtmlListPage):
@@ -23,6 +23,12 @@ class EmployeeList(HtmlListPage):
             ),
             source=XPath("./a/@href").match_one(details),
         )
+
+    def get_next_source(self):
+        try:
+            return XPath("//a[contains(text(), 'Next')]/@href").match_one(self.root)
+        except SelectorError:
+            pass
 
 
 class EmployeeDetail(HtmlPage):
