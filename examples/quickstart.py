@@ -44,3 +44,6 @@ class EmployeeDetail(HtmlPage):
             # in this case a dict we can expand here
             **self.input,
         )
+
+    def process_error_response(self, exception):
+        self.logger.warning(exception)
