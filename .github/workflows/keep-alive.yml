@@ -1,0 +1,12 @@
+name: Keep Alive
+
+on:
+  schedule:
+    - cron: '0,20,40 * * * *'
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+    - name: ping
+      run: curl https://yoyodyne-propulsion.herokuapp.com/
