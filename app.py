@@ -26,6 +26,67 @@ def about():
     return render_template("about.html")
 
 
+@app.route("/awards")
+def awards():
+    award_data = [
+        {
+            "name": "Nobel Prize in Physics",
+            "year": "1934",
+            "for": "Discovery of the 8th Dimension",
+            "to": "John Whorfin",
+        },
+        {
+            "name": "Cousteau Society Award",
+            "year": "1989",
+            "for": "Uses of Cephalopod Intelligence",
+            "to": "John Fish",
+        },
+        {
+            "name": "Best Supporting Actor",
+            "year": "1985",
+            "for": "John Lithgow Biopic",
+            "to": "John Whorfin",
+        },
+        {
+            "name": "Nobel Prize in Physics",
+            "year": "2986",
+            "for": "Temporal Paradox Resolution",
+            "to": "John O'Connor",
+        },
+        {
+            "name": "Paralegal of the Year",
+            "year": "1999",
+            "for": "Paralegal Activity",
+            "to": "John Two Horns",
+        },
+        {
+            "name": "ACM Award",
+            "year": "1986",
+            "for": "Innovations in User Interface",
+            "to": "John Ya Ya",
+        },
+        {
+            "name": "2nd Place, Most Jars Category",
+            "year": "1987",
+            "for": "Jars",
+            "to": "John Many Jars",
+        },
+        {
+            "name": "Album of the Year",
+            "year": "1997",
+            "for": "Space Coyote",
+            "to": "John Coyote",
+        },
+        {
+            "name": "Most Creative Loophole",
+            "year": "1985",
+            "for": "Innovation in Interdimensional Tax Shelters",
+            "to": "John Lee",
+        },
+    ]
+    return render_template("awards.html", awards=award_data)
+
+
 @app.route("/staff")
 def staff():
     page = int(request.args.get("page", 1))
