@@ -1,6 +1,6 @@
-# fly.toml file generated for yoyodyne-propulsion on 2022-11-06T17:47:14-06:00
+# fly.toml file generated for parks-www on 2022-12-07T17:27:00-06:00
 
-app = "yoyodyne-propulsion"
+app = "parks-www"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
