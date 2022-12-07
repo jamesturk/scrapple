@@ -2,23 +2,21 @@
 
 {% block base %}
   <div class="card fluid">
-    <h1 class="section">Yoyodyne Propulsion Systems <small>Staff Roster</small></h1>
+    <h1 class="section">Chicago Parks<small>List of Parks</small></h1>
     <div class="section">
       <table id="employees" style="max-height: 100%;">
       <thead>
         <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Position Name</th>
+          <th>Name</th>
+          <th>Location</th>
           <th>&nbsp;</th>
         </tr>
       </thead>
       <tbody>
-      {% for e in employees %}
+      {% for e in parks %}
       <tr>
-        <td>{{ e.first }}</td>
-        <td>{{ e.last }}</td>
-        <td>{{ e.position }}</td>
+        <td>{{ e.title }}</td>
+        <td>{{ e.address }}</td>
         <td><a href="/staff/{{ e.id }}">Details</a></td>
       </tr>
       {% endfor %}
