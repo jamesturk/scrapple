@@ -11,7 +11,7 @@ def parks():
     global _data
     if not _data:
         with open("data/parks.json") as f:
-            _data = {p["id"]: p for p in json.load(f)}
+            _data = {int(p["id"]): p for p in json.load(f)}
     return _data
 
 
@@ -26,7 +26,7 @@ def about():
 
 
 @app.route("/parks")
-def staff():
+def park_list():
     page = int(request.args.get("page", 1))
     per_page = 10
     total_items = len(parks())
@@ -45,7 +45,7 @@ def staff():
 
 @app.route("/parks/<id_>")
 def park_detail(id_):
-    if park := parks().get(id_):
-        return render_template("staff_detail.html", employee=employee)
+    if park := parks().get(int(id_)):
+        return render_template("park_detail.html", park=park)
     else:
         abort(404)

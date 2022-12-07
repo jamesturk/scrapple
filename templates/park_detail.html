@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block base %}
+  <div class="card fluid">
+    <h2 class="section">{{ park.title }}</h2>
+    <div class="section">
+      <dl>
+        <dt>Address</dt>
+        <dd id="address">
+        {% autoescape false %}
+        {{ park.address|replace("\n","<br>") }}
+        {% endautoescape %}
+        </dd>
+        <dt>About</dt>
+        <dd id="children">
+        {% autoescape false %}
+        {{ park.description|replace("\n","<br>") }}
+        {% endautoescape %}
+        </dd>
+        <dt>History</dt>
+        <dd id="hired">
+        {% autoescape false %}
+        {{ park.history|replace("\n","<br>") }}
+        {% endautoescape %}
+        </dd>
+      </dl>
+    </div>
+  </div>
+{% endblock %}
