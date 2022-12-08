@@ -3,11 +3,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
     <style type="text/css">
-    header { background: #476930; color: #ddd; }
+    /*header { background: #476930; color: #ddd; }
     header a.logo { color: #ddd; }
     a.button { background: #476930; color: #ddd; }
     a.button:hover { color: #476930; background: #ddd; }
-    footer { background: #476930; color: #ddd; }
+    footer { background: #476930; color: #ddd; }*/
+    div.parks { background: #476930; color: #ddd; padding: 12px; }
     .location-header { border: 1px solid #476930; border-radius: 3px; padding: 1em; }
     .location-header-label { font-weight: bold; clear: both; }
     .location-header-value { clear: both; }
@@ -17,15 +18,16 @@
   </head>
   <body>
     <header>
-      <a href="#" class="logo">Chicago Parks</a>
+      <a href="#" class="logo">Scrapple</a>
       <a href="/" class="button">Home</a>
+      <a href="/staff" class="button">Yoyodyne</a>
       <a href="/parks" class="button">Parks</a>
       <a href="/about" class="button">About</a>
     </header>
       {% block base %}
       {% endblock %}
     <footer>
-      <p>This site is created for the express purpose of <a href="/about" style="color: #fff;">demonstrating scraping techniques</a>.  No information contained on this site is meant to be taken as useful in any way.</p>
+      <p>This site is created for the express purpose of <a href="/about">demonstrating scraping techniques</a>.  No information contained on this site is meant to be taken as useful in any way.</p>
     </footer>
   </body>
 </html>
