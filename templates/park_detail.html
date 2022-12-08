@@ -2,28 +2,85 @@
 
 {% block base %}
   <div class="card fluid">
-    <h2 class="section">{{ park.title }}</h2>
+    <div class="page-title">
+      <h2 class="section">{{ park.title }}</h2>
+    </div>
     <div class="section">
-      <dl>
-        <dt>Address</dt>
-        <dd id="address">
-        {% autoescape false %}
-        {{ park.address|replace("\n","<br>") }}
-        {% endautoescape %}
-        </dd>
-        <dt>About</dt>
-        <dd id="children">
+
+      <div class="location-header">
+        {% if park.id % 7 == 0 %}
+        <span class="location-header-label">Phone</span>
+        <span class="location-header-value">
+          <p class="phone">(not available)</p>
+        </span>
+        {% endif %}
+        <span class="location-header-label">Address</span>
+        <span class="location-header-value">
+          <p class="address">
+          {% autoescape false %}
+          {{ park.address|replace("\n","<br>") }}
+          {% endautoescape %}
+          </p>
+        </span>
+        <span class="location-header-label">Jurisdiction</span>
+        <span class="location-header-value">
+          <p>Chicago Parks</p>
+        </span>
+      </div>
+
+      {# sometimes add another block in, we'll use the id to decide #}
+      {% if park.id % 17 == 0 %}
+      <div class="view-content">
+        <h3><span id="Other"></span></h3>
+        <h3 class="block-title"> Reserved </h3>
+        <div class="block-text">
+          This section is reserved for future use.
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="view-content">
+        <h3><span id="Description"></span></h3>
+        <h3 class="block-title"> Description </h3>
+        <div class="block-text">
         {% autoescape false %}
         {{ park.description|replace("\n","<br>") }}
         {% endautoescape %}
-        </dd>
-        <dt>History</dt>
-        <dd id="hired">
+        </div>
+      </div>
+
+      {# sometimes add another block in, we'll use the id to decide #}
+      {% if park.id % 5 == 0 %}
+      <div class="view-content">
+        <h3><span id="Other"></span></h3>
+        <h3 class="block-title"> Other </h3>
+        <div class="block-text">
+          This section is reserved for future use.
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="view-content">
+        <h3><span id="History"></span></h3>
+        <h3 class="block-title"> History </h3>
+        <div class="block-text">
         {% autoescape false %}
         {{ park.history|replace("\n","<br>") }}
         {% endautoescape %}
-        </dd>
-      </dl>
+        </div>
+      </div>
+
+      {# sometimes add another block in, we'll use the id to decide #}
+      {% if park.id % 11 == 0 %}
+      <div class="view-content">
+        <h3><span id="Other"></span></h3>
+        <h3 class="block-title"> Other </h3>
+        <div class="block-text">
+          This section is reserved for future use.
+        </div>
+      </div>
+      {% endif %}
+
     </div>
   </div>
 {% endblock %}

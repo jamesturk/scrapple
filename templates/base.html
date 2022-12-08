@@ -2,6 +2,16 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+    <style type="text/css">
+    header { background: #476930; color: #ddd; }
+    header a.logo { color: #ddd; }
+    a.button { background: #476930; color: #ddd; }
+    footer { background: #476930; color: #ddd; }
+    .location-header { border: 1px solid #476930; border-radius: 3px; padding: 1em; }
+    .location-header-label { font-weight: bold; clear: both; }
+    .location-header-value { clear: both; }
+    .block-text { font-size: 120%; padding: 0 2em; }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -13,7 +23,7 @@
     </header>
       {% block base %}
       {% endblock %}
-    <footer style="background: #666; color: #ddd;">
+    <footer>
       <p>This site is created for the express purpose of <a href="/about" style="color: #fff;">demonstrating scraping techniques</a>.  No information contained on this site is meant to be taken as useful in any way.</p>
     </footer>
   </body>
