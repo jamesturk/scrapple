@@ -24,13 +24,13 @@
       </table>
       <div style="display: grid; grid-template-columns: auto auto;">
       {% if prev_page %}
-        <a class="button" href="?page={{ prev_page }}" style="justify-self: start;">&laquo; Previous</a>
+        <a class="button" href="?page={{ prev_page }}" title="prev page" style="justify-self: start;">&laquo; Previous</a>
       {% else %}
         <!-- for grid spacing -->
         <span>&nbsp;</span>
       {% endif %}
       {% if next_page %}
-        <a class="button" style="justify-self: end;" href="?page={{ next_page }}">Next &raquo;</a>
+        <a class="button" style="justify-self: end;" title="next page" href="?page={{ next_page }}">Next &raquo;</a>
       {% endif %}
       </div>
     </div>

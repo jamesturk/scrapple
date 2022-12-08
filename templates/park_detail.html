@@ -60,6 +60,8 @@
       </div>
       {% endif %}
 
+      {# optional #}
+      {% if park.history %}
       <div class="view-content">
         <h3><span id="History"></span></h3>
         <h3 class="block-title"> History </h3>
@@ -69,6 +71,7 @@
         {% endautoescape %}
         </div>
       </div>
+      {% endif %}
 
       {# sometimes add another block in, we'll use the id to decide #}
       {% if park.id % 11 == 0 %}
