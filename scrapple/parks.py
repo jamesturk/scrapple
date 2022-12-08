@@ -1,28 +1,17 @@
 import json
 import math
-from flask import Flask, render_template, abort, request
+from . import app
+from flask import render_template, abort, request
 
-app = Flask(__name__)
-
-_data = {}
+_parks = {}
 
 
 def parks():
-    global _data
-    if not _data:
+    global _parks
+    if not _parks:
         with open("data/parks.json") as f:
-            _data = {int(p["id"]): p for p in json.load(f)}
-    return _data
-
-
-@app.route("/")
-def index():
-    return render_template("index.html")
-
-
-@app.route("/about")
-def about():
-    return render_template("about.html")
+            _parks = {int(p["id"]): p for p in json.load(f)}
+    return _parks
 
 
 @app.route("/parks")
