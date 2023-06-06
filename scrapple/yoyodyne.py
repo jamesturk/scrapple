@@ -98,6 +98,15 @@ def staff():
 
 @app.route("/staff/<id_>")
 def staff_detail(id_):
+    # check style parameter
+    style = request.args.get("style", "")
+    if style == "new":
+        template = "staff_detail_new.html"
+    elif style == "experimental":
+        template = "staff_detail_experimental.html"
+    else:
+        template = "staff_detail.html"
+
     if id_ == "404":
         abort(
             404,
