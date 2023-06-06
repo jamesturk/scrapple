@@ -113,6 +113,6 @@ def staff_detail(id_):
             "This page intentionally left blank. (No really! This is an intentional error for demonstration purposes.)",
         )
     if employee := employees().get(id_):
-        return render_template("staff_detail.html", employee=employee)
+        return render_template(template, employee=employee)
     else:
         abort(404)
